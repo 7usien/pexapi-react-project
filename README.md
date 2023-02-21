@@ -1,6 +1,10 @@
-## Simple web app fr search for images on pexels based api
+## Simple web app for search for images on pexels based api
 
-> the App is uder development
+---
+
+> the App is Under development
+
+---
 
 ### Tech/tools used :
 

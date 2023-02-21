@@ -1,0 +1,13 @@
+.photolist {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.photolist div {
+  height: 300px;
+}
+.photolist div img {
+  width: 100%;
+  height: 100%;
+}

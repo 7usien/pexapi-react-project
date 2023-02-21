@@ -1,10 +1,11 @@
 import './index.css';
-import { Footer, Header } from './components';
+import { Footer, Header, SearchBox } from './components';
 
 function App() {
   return (
     <>
       <Header />
+      <SearchBox />
       <Footer />
     </>
   );
