@@ -1,0 +1,28 @@
+.pagination {
+  max-width: 1170px;
+  margin: 1.7rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.7rem;
+}
+
+.pagination button {
+  border: none;
+  background-color: #484848;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background-color, transform 0.4s ease-out;
+}
+
+.pagination button:hover {
+  background-color: #7d28d0;
+  transform: scale(1.1);
+}
+
+.pagination .active {
+  background-color: #7d28d0;
+}

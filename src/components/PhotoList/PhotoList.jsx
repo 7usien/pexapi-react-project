@@ -1,18 +1,21 @@
 import styles from './photolist.module.css';
 import Container from '../Container/Container';
-function PhotoList({ data, term }) {
-  const { photolist } = styles;
+import Image from '../Image/Image';
+function PhotoList({ data, term, loading, count }) {
+  const { photolist, heading } = styles;
 
-  console.log(data);
   return (
     <>
       <Container>
-        <h3>photo results for : {term} </h3>
+        {count && term && (
+          <h3 className={heading}>
+            photo for : {term} is : {count} getten result
+          </h3>
+        )}
+        {loading && <div className='loading'>fetching data wait ..</div>}
         <div className={photolist}>
           {data?.map((photo) => (
-            <div key={photo.id}>
-              <img src={photo.src.tiny} alt='' />
-            </div>
+            <Image loading={loading} key={photo.id} {...photo} />
           ))}
         </div>
       </Container>
