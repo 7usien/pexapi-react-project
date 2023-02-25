@@ -10,3 +10,9 @@
 
 - [x] Html and css
 - [x] Reactjs
+-
+-
+
+### perview Link
+
+[pexapi](https://pexapi.netlify.app/)

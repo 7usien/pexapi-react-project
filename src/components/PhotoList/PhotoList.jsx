@@ -11,8 +11,10 @@ function PhotoList({ data, term, loading, count }) {
       <Container>
         {count > 0 && term && (
           <h3 className={heading}>
-            you serach for : <span>{term}</span> and we found{' '}
-            <span>{count}</span> result for it
+            you serach for : <span>{term}</span>
+            <p>
+              found <span>{count}</span> result for it
+            </p>
           </h3>
         )}
         {loading && (

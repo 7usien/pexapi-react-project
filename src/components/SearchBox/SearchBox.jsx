@@ -10,7 +10,7 @@ function SearchBox() {
   const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(8); // 4 per row * 6
+  const [postsPerPage, setPostsPerPage] = useState(32); // 4 per row * 6
   const [totalResults, setTotalResults] = useState(0);
 
   const searchHandler = (e) => {
@@ -65,9 +65,9 @@ function SearchBox() {
             }}
             placeholder='try to search for any image here ...'
           />
-          <input type='submit' value='search' />
         </form>
       </div>
+
       <PhotoList
         count={totalResults}
         loading={loading}
