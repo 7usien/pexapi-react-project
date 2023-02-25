@@ -47,7 +47,7 @@ function SearchBox() {
       if (searchTerm.length > 0) {
         searchimages();
       }
-    }, 1500);
+    }, 1000);
 
     return () => {
       clearTimeout(searchDebounce);

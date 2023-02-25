@@ -1,13 +1,26 @@
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import DownloadingIcon from '@mui/icons-material/Downloading';
+import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import loadingImg from '../../assets/loading.gif';
 import styles from './image.module.css';
 
-const { imgCard, cardInfo, imgDownload } = styles;
+const { imgCard, cardInfo, imgDownload, imgZoom } = styles;
 
-const Image = ({ src, loading, photographer, alt }) => {
+const Image = ({ setPopImg, src, loading, photographer, alt, setPopWin }) => {
   return (
     <div className={imgCard}>
+      <div className={imgZoom}>
+        <a
+          onClick={() => {
+            setPopWin(true);
+
+            setPopImg(src.original);
+          }}
+        >
+          <ZoomOutMapIcon />
+        </a>
+      </div>
+
       <div className={imgDownload}>
         <ul>
           <li>

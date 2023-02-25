@@ -8,7 +8,17 @@ const Pagination = ({ setCurrentPage, postsPerPage, totalResults }) => {
 
   const [page, setPage] = useState(2);
 
+  const scrollUp = (top, left) => {
+    window.scroll({
+      top: top,
+      left: left,
+      behavior: 'smooth',
+    });
+  };
+
   const pageNext = (step) => {
+    scrollUp(100, 100);
+
     if (step === 'next') {
       if (page <= Math.ceil(totalResults / postsPerPage)) {
         setPage((prev) => prev + 1);
