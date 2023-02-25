@@ -1,8 +1,8 @@
-<div style="text-align:center">
+<p align="center" width="100%">
 
 ![](https://pexapi.netlify.app/static/media/logo.25e2d41a10b898e10620.svg)
 
-</div>
+</p>
 
 ## Simple web app for search for images on pexels based api
 
