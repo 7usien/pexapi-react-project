@@ -1,6 +1,6 @@
 <p align="center" width="100%">
 
-![](https://pexapi.netlify.app/static/media/logo.25e2d41a10b898e10620.svg)
+<img src="https://pexapi.netlify.app/static/media/logo.25e2d41a10b898e10620.svg">
 
 </p>
 
