@@ -1,3 +1,5 @@
+![](https://pexapi.netlify.app/static/media/logo.25e2d41a10b898e10620.svg)
+
 ## Simple web app for search for images on pexels based api
 
 > the App is Under development
