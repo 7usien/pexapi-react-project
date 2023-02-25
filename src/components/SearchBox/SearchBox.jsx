@@ -1,4 +1,3 @@
-import { LogoDev } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
 import Pagination from '../Pagination/Pagination';
 import PhotoList from '../PhotoList/PhotoList';
@@ -11,10 +10,9 @@ function SearchBox() {
   const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(24); // 4 per row * 6
+  const [postsPerPage, setPostsPerPage] = useState(16); // 4 per row * 6
   const [totalResults, setTotalResults] = useState(0);
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
+
   const searchHandler = (e) => {
     setSearchTerm(e);
   };
@@ -26,7 +24,8 @@ function SearchBox() {
         setTotalResults(null);
 
         const res = await fetch(
-          `https://api.pexels.com/v1/search?query=${searchTerm}&per_page=24?page=${currentPage}`,
+          `https://api.pexels.com/v1/search/?page=${currentPage}&per_page=${postsPerPage}&query=${searchTerm}`,
+
           {
             method: 'GET',
             headers: {
@@ -50,14 +49,10 @@ function SearchBox() {
       }
     }, 1500);
 
-    console.log(currentPage);
-
     return () => {
       clearTimeout(searchDebounce);
     };
-  }, [searchTerm]);
-
-  const currentPosts = photos?.slice(firstPostIndex, lastPostIndex);
+  }, [searchTerm, currentPage]);
 
   return (
     <>
@@ -68,7 +63,7 @@ function SearchBox() {
             onChange={(e) => {
               searchHandler(e.target.value);
             }}
-            placeholder='Search for images...'
+            placeholder='try to search for any image here ...'
           />
           <input type='submit' value='search' />
         </form>
@@ -76,15 +71,14 @@ function SearchBox() {
       <PhotoList
         count={totalResults}
         loading={loading}
-        data={currentPosts}
+        data={photos}
         term={searchTerm}
       />
 
       <Pagination
+        totalResults={totalResults}
+        postsPerPage={postsPerPage}
         setCurrentPage={setCurrentPage}
-        totalPosts={totalResults}
-        postsPerpage={postsPerPage}
-        currentPage={currentPage}
       />
     </>
   );

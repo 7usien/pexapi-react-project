@@ -1,18 +1,26 @@
 import styles from './photolist.module.css';
 import Container from '../Container/Container';
+import loadingImg from '../../assets/loading.png';
+
 import Image from '../Image/Image';
 function PhotoList({ data, term, loading, count }) {
-  const { photolist, heading } = styles;
+  const { photolist, heading, loadingwrap } = styles;
 
   return (
     <>
       <Container>
-        {count && term && (
+        {count > 0 && term && (
           <h3 className={heading}>
-            photo for : {term} is : {count} getten result
+            you serach for : <span>{term}</span> and we found{' '}
+            <span>{count}</span> result for it
           </h3>
         )}
-        {loading && <div className='loading'>fetching data wait ..</div>}
+        {loading && (
+          <div className={loadingwrap}>
+            <img src={loadingImg} alt='' />
+            fetching data wait ..
+          </div>
+        )}
         <div className={photolist}>
           {data?.map((photo) => (
             <Image loading={loading} key={photo.id} {...photo} />

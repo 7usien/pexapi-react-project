@@ -5,8 +5,32 @@
 }
 
 .heading {
-  text-align: center;
+  text-align: left;
   font-size: 1.4rem;
   text-transform: capitalize;
-  padding: 1.5rem 0;
+  padding: 1.3rem 0;
+}
+
+.heading span {
+  color: #fff;
+
+  background-color: purple;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  vertical-align: middle;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.loadingwrap {
+  text-align: center;
+  padding: 2rem 0;
+  text-transform: capitalize;
+  color: red;
+  font-weight: bold;
+}
+
+.loadingwrap img {
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
