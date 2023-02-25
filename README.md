@@ -10,6 +10,4 @@
 - [x] Reactjs
 - [x] Material design icon
 
-### perview Link
-
-[pexapi](https://pexapi.netlify.app/)
+### perview Link : [ pexapi demo ](https://pexapi.netlify.app/)
