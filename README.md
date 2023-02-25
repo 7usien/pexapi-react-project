@@ -1,7 +1,5 @@
 ## Simple web app for search for images on pexels based api
 
----
-
 > the App is Under development
 
 ---
