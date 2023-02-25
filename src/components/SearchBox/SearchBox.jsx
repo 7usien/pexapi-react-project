@@ -10,7 +10,7 @@ function SearchBox() {
   const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(16); // 4 per row * 6
+  const [postsPerPage, setPostsPerPage] = useState(8); // 4 per row * 6
   const [totalResults, setTotalResults] = useState(0);
 
   const searchHandler = (e) => {

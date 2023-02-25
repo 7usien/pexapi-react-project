@@ -6,24 +6,23 @@ import { useState } from 'react';
 const Pagination = ({ setCurrentPage, postsPerPage, totalResults }) => {
   const { pagination } = styles;
 
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   const pageNext = (step) => {
     if (step === 'next') {
       if (page <= Math.ceil(totalResults / postsPerPage)) {
-        return setPage((prev) => prev + 1);
+        setPage((prev) => prev + 1);
       }
     } else if (step === 'prev') {
       if (page < 2) {
-        return setPage(1);
+        setPage(1);
       } else {
-        return setPage((prev) => prev - 1);
+        setPage((prev) => prev - 1);
       }
     }
 
     return setCurrentPage(page);
   };
-  console.log(page);
 
   return (
     <div className={pagination}>

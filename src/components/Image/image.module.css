@@ -1,6 +1,7 @@
 .imgCard {
   height: 270px;
   position: relative;
+  overflow: hidden;
 }
 
 .imgCard::before {
@@ -29,4 +30,79 @@
   border-radius: 8px;
   filter: Drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
   object-fit: cover;
+}
+
+.cardInfo {
+  width: 100%;
+  z-index: 9;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: none;
+}
+
+.cardInfo svg {
+  vertical-align: middle;
+}
+.cardInfo h4 {
+  font-size: 1.1rem;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes popin {
+  0% {
+    opacity: 0;
+    transform: translate(0%, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+
+.imgCard:hover .cardInfo {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  animation: popin 0.2s ease-out;
+}
+
+.imgDownload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: none;
+}
+.imgDownload ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.imgDownload ul li {
+  list-style: none;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.imgDownload a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.imgCard:hover .imgDownload {
+  display: block;
+
+  animation: popin 0.2s ease-out;
 }
